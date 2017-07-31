@@ -1,0 +1,21 @@
+<div class="swiper-container-right">
+    <div class="swiper-wrapper">
+        {php}foreach($slide_list[2] as $key=>$slide){{/php}
+        <div class="swiper-slide">
+            <a href="javascript:;" onclick="window.open('{$slide.link}','{$slide.target}')"><img src="__ROOT__{$slide.image}"/></a>
+        </div>
+        {php}}{/php}
+    </div>
+</div>
+<script>
+    var swiper = new Swiper('.swiper-container-right', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true,
+        autoplay : 1500,
+        lazyLoading: true
+    });
+</script>

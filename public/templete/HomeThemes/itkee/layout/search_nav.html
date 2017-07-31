@@ -1,0 +1,41 @@
+<div class="fly-tab fly-tab-index">
+    <span>
+      <a href="/topic-list.html" class="">全部</a>
+      <a href="{:url('index/topic/index',['is_end'=>'0'])}" class="">未结帖</a>
+      <a href="{:url('index/topic/index',['is_end'=>'1'])}" class="">已结贴</a>
+      <a href="{:url('index/topic/index',['is_hot'=>'1'])}" class="">精帖</a>
+      {if condition="($uid)"}<a href="/user.html">我的帖</a>{/if}
+    </span>
+    <form action="{:url('index/topic/topic_list')}" class="fly-search">
+        <i class="iconfont icon-sousuo"></i>
+        <input class="layui-input" autocomplete="off" placeholder="搜索内容，回车跳转" type="text" value="" name="keywords">
+        <div class="search-notice"></div>
+    </form>
+    <a href="/topic-add.html" class="layui-btn jie-add">发布问题</a>
+</div>
+<style>
+    .search-notice{display: none;position: absolute;z-index:999;background: #dbe0cc}
+</style>
+<script>
+    $("input[name='keywords']").blur(function () {
+        $(".search-notice").fadeOut();
+    });
+    $("input[name='keywords']").bind('input propertychange', function() {
+        var keywords = $(this).val();
+        if(keywords.length>0){
+            var data = {keywords:keywords};
+            var url = "{:url('api/search/index')}";
+            $.post(url,data,function(datas){
+                if(datas.code==1){
+                    $(".search-notice").html(datas.data);
+                    $(".search-notice").fadeIn();
+                }
+            });
+        }
+    });
+    function serach(id){
+        var url="/topic-info-"+id+".html";
+        window.open(url);
+    }
+
+</script>

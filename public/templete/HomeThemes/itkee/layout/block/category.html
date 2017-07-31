@@ -1,0 +1,56 @@
+<div  style="background: #fff;">
+    <fieldset class="layui-elem-field layui-field-title">
+        <legend>话题树 - Topic Tree</legend>
+        <div class="layui-field-box">
+            <div id="tree" class="ztree"></div>
+        </div>
+    </fieldset>
+</div>
+<script src="__JS__/jquery.ztree.all.min.js"></script>
+<script>
+    $(document).ready(function() {
+        /**
+         * 加载树形授权菜单
+         */
+        var tree = $("#tree");
+        var zTree;
+
+        // zTree 配置项
+        var setting = {
+            check: {
+                enable: false,
+            },
+            view: {
+                dblClickExpand: false,
+                showLine: true,
+                showIcon: false,
+                selectedMulti: false
+            },
+            data: {
+                simpleData: {
+                    enable: true,
+                    idKey: "id",
+                    pIdKey: "pid",
+                    rootpid: ""
+                },
+                key: {
+                    name: "name",
+                    url:"xUrl",
+                    target:"target",
+                }
+            }
+        };
+
+        $.ajax({
+            url: "{:url('index/category/getCategoryJson')}",
+            type: "post",
+            dataType: "json",
+            cache: false,
+            data: {},
+            success: function (data) {
+                zTree = $.fn.zTree.init(tree, setting, data);
+                zTree.expandNode(true);
+            }
+        });
+    });
+</script>

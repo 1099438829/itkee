@@ -1,0 +1,10 @@
+<div class="fly-panel" style="margin-bottom: 15px;">
+    <!--<h3 class="fly-panel-title">站点右侧广告</h3>-->
+    <div class="fly-panel" style="margin-bottom: 15px;">
+        {if condition="(itkee_getadv('站点右侧广告') neq '')"}
+        {:itkee_getadv('站点右侧广告')}
+        {else/}
+        <div style="height: 90px; line-height: 90px; text-align: center; background-color: #f8f8f8; color: #ccc; font-size: 16px; font-weight: 300;">广告位，联系邮箱：superman@itkee.cn</div>
+        {/if}
+    </div>
+</div>

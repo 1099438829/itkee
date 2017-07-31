@@ -1,0 +1,17 @@
+<div class="fly-panel leifeng-rank">
+    <h3 class="fly-panel-title">近一月回答榜 - TOP 12
+        <span>HOT USER REPLAY</span>
+    </h3>
+
+    <dl>
+        {foreach name="hot_user" item="user"}
+        <dd>
+            <a href="/user-home-{$user['user_id']}.html">
+                <img src="{$user['avatar']}">
+                <cite>{$user['user_name']}</cite>
+                <i>{$user['count(*)']}次回答</i>
+            </a>
+        </dd>
+        {/foreach}
+    </dl>
+</div>

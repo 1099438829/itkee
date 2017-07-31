@@ -1,0 +1,9 @@
+<dl class="fly-panel fly-list-one">
+    <dt class="fly-panel-title">月度热议<span>HOT COMMENTS</span></dt>
+    {foreach name="hot_comment_topic" item="new"}
+    <dd>
+        <a href="/topic-info-{$new['id']}.html">{$new.title}</a>
+        <span><i class="iconfont">&#xe60c;</i> {$new.comments}</span>
+    </dd>
+    {/foreach}
+</dl>
