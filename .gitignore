@@ -1,5 +1,6 @@
 .idea
 composer.lock
+install.lock
 *.log
 itkee_github.zip
 runtime
