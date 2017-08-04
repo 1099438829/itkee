@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost_3306
 Source Server Version : 50547
 Source Host           : localhost:3306
-Source Database       : itkee_free
+Source Database       : itkee_git
 
 Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-07-20 16:12:26
+Date: 2017-08-04 09:58:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -89,8 +89,6 @@ CREATE TABLE `itkee_auth_group` (
 -- Records of itkee_auth_group
 -- ----------------------------
 INSERT INTO `itkee_auth_group` VALUES ('1', '超级管理组', '1', '5,6,7,8,9,10,11,81,12,39,40,41,42,43,82,14,13,20,21,22,23,24,92,15,25,26,27,28,29,30,83,54,57,68,69,70,71,72,85,84,55,58,59,60,61,62,56,63,64,65,66,67,77,16,17,44,45,46,47,48,18,49,50,51,52,53,19,31,32,33,34,35,36,37,86,79,80,78,1,2,3,73,74,87,88,89,90,91');
-INSERT INTO `itkee_auth_group` VALUES ('2', '管理员组', '1', '5,6,81,12,82,14,13,92,15,30,83,25,26,27,28,113,54,57,85,77,80,16,17,44,45,18,49,100,107,108,19,31,36,37,86,32,33,34,35,94,95,101,78,87,88,89,90,91,93,96,97');
-INSERT INTO `itkee_auth_group` VALUES ('3', '对外演示权限组', '1', '5,6,81,12,82,14,13,92,15,83,98,99,54,57,85,77,79,80,78,1,2,87,88');
 
 -- ----------------------------
 -- Table structure for `itkee_auth_group_access`
@@ -108,9 +106,6 @@ CREATE TABLE `itkee_auth_group_access` (
 -- Records of itkee_auth_group_access
 -- ----------------------------
 INSERT INTO `itkee_auth_group_access` VALUES ('1', '1');
-INSERT INTO `itkee_auth_group_access` VALUES ('2', '1');
-INSERT INTO `itkee_auth_group_access` VALUES ('3', '2');
-INSERT INTO `itkee_auth_group_access` VALUES ('5', '1');
 
 -- ----------------------------
 -- Table structure for `itkee_auth_rule`
@@ -280,7 +275,7 @@ CREATE TABLE `itkee_nav` (
   `sort` int(11) NOT NULL DEFAULT '0' COMMENT '排序',
   `nav_cid` int(10) DEFAULT NULL COMMENT '分类ID',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='导航表';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='导航表';
 
 -- ----------------------------
 -- Records of itkee_nav
