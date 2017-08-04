@@ -71,6 +71,8 @@ class Login extends Controller
                                 'id'              => $admin_user['id']
                             ]
                         );
+                        $group = Db::name('auth_group_access')->where(['uid'=>session('admin_id')])->find();
+                        Session::set('group_id', $group['group_id']);
                         $this->success('登录成功', 'admin/index/index');
                     }
                 } else {
@@ -89,6 +91,7 @@ class Login extends Controller
             Cookie::delete('workspaceParam');
         }
         Session::delete('admin_id');
+        Session::delete('group_id');
         Session::delete('admin_name');
         $this->success('退出成功', 'admin/login/index');
     }
