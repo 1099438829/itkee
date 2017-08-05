@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
+Source Server         : 本地
 Source Server Version : 50547
 Source Host           : localhost:3306
-Source Database       : itkee_git
+Source Database       : itkee_demo
 
 Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-08-04 09:58:17
+Date: 2017-08-05 10:12:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -29,12 +29,13 @@ CREATE TABLE `itkee_admin_user` (
   `last_login_ip` varchar(20) DEFAULT NULL COMMENT '最后登录IP',
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='管理员表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='管理员表';
 
 -- ----------------------------
 -- Records of itkee_admin_user
 -- ----------------------------
-INSERT INTO `itkee_admin_user` VALUES ('1', 'admin', '8d481b131be8e0e9e1890daf2d29aa3b', '1', '1494317546', '2017-07-20 14:40:19', '127.0.0.1');
+INSERT INTO `itkee_admin_user` VALUES ('1', 'admin', '8d481b131be8e0e9e1890daf2d29aa3b', '1', '1494317546', '2017-08-05 10:12:26', '127.0.0.1');
+INSERT INTO `itkee_admin_user` VALUES ('3', 'demo', 'a24dfc8e919798d7f7b857775175527c', '1', null, '2017-08-02 20:59:42', '183.39.124.87');
 
 -- ----------------------------
 -- Table structure for `itkee_article`
@@ -66,12 +67,13 @@ CREATE TABLE `itkee_article` (
   `identity_id` int(1) NOT NULL DEFAULT '0' COMMENT '阅读角色ID',
   `is_download` int(1) unsigned zerofill DEFAULT '0' COMMENT '是否推荐下载',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of itkee_article
 -- ----------------------------
-INSERT INTO `itkee_article` VALUES ('1', 'ITKEE社区介绍', 'ITKEE社区介绍', '', '12', 'SuperMan', '0', '1', '2017-07-20 16:02:50', '0', '1500538109', '<p><span style=\"font-size: 16px;\">ITKEE社区功能简介：</span></p><p><span style=\"font-size: 16px;\">采用thinkphp5全新制作</span></p><p><span style=\"font-size: 16px;\">秉承：<span style=\"font-size: 16px; color: rgb(255, 0, 0);\"><strong>极速 清新 精简&nbsp;</strong></span></span></p><p><span style=\"font-size: 16px;\">理念打造</span></p><p><br/></p><p><span style=\"font-size: 16px;\">身处在前端社区的繁荣之下，我们都在有意或无意地追逐,<span style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px;\">返璞归真</span></span></p><p><span style=\"font-size: 16px;\"><span style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px;\"><br/></span></span></p><p><span style=\"font-size: 16px;\"><span style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px;\"><span style=\"font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px;\">如果您在使用系统的过程中获得了一定的的收益，请不要吝啬您的言语，可以在社区写一篇鼓励我们的话，我们会更努力！ <a href=\"http://www.itkee.cn/\" target=\"_blank\">立即赞扬</a></span></span></span></p><p><br/></p><p style=\"padding: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px; white-space: normal;\">[ITKEE社区] PHP/前端/交流，互联网技术交流，资源分享，我们一直在努力，欢迎加入！</p><p style=\"padding: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px; white-space: normal;\"><br/></p><p style=\"padding: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px; white-space: normal;\">使用过程中如果遇到问题，请在<a href=\"http://www.itkee.cn/topic.html\" target=\"_blank\">社区发布反馈</a></p><p style=\"padding: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px; white-space: normal;\"><br/></p><p style=\"padding: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px; white-space: normal;\"><br/></p><p style=\"padding: 0px; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); font-family: &quot;Helvetica Neue&quot;, Helvetica, &quot;PingFang SC&quot;, 微软雅黑, Tahoma, Arial, sans-serif; font-size: 14px; white-space: normal; text-align: right;\"><a href=\"https://jq.qq.com/?_wv=1027&k=4AEFdBX\" target=\"_blank\" style=\"padding: 0px; margin: 0px; text-decoration: underline; color: rgb(0, 176, 80);\"><span style=\"color: rgb(0, 176, 80);\">点击加入</span></a><span style=\"color: rgb(0, 176, 80);\">官方交流群</span></p><p><br/></p>', null, '', '0', '0', '0', '0', '1', '0', '', '0', '0', '0');
+INSERT INTO `itkee_article` VALUES ('1', 'ITKEE社区介绍', 'ITKEE社区介绍', '', '1', 'SuperMan', '0', '1', '2017-07-20 16:02:50', '0', '1500538109', '<p><span style=\"font-size: 16px;\">ITKEE社区功能简介：</span></p><p><span style=\"font-size: 16px;\">采用thinkphp5全新制作</span></p><p><span style=\"font-size: 16px;\">秉承：<span style=\"color: rgb(255, 0, 0); font-size: 16px;\"><strong>极速 清新 精简&nbsp;</strong></span></span></p><p><span style=\"font-size: 16px;\">理念打造</span></p><p><br/></p><p><span style=\"font-size: 16px;\">身处在前端社区的繁荣之下，我们都在有意或无意地追逐,<span style=\"font-family:;\">返璞归真</span></span></p><p><span style=\"font-size: 16px;\"><span style=\"font-family:;\"><br/></span></span></p><p><span style=\"font-size: 16px;\"><span style=\"font-family:;\"><span style=\"font-family:;\">如果您在使用系统的过程中获得了一定的的收益，请不要吝啬您的言语，可以在社区写一篇鼓励我们的话，我们会更努力！ <a href=\"http://www.itkee.cn/\" target=\"_blank\">立即赞扬</a></span></span></span></p><p><br/></p><p style=\"padding: 0px; font-family:; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\">[ITKEE社区] PHP/前端/交流，互联网技术交流，资源分享，我们一直在努力，欢迎加入！</p><p style=\"padding: 0px; font-family:; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\"><br/></p><p style=\"padding: 0px; font-family:; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\">使用过程中如果遇到问题，请在<a href=\"http://www.itkee.cn/topic.html\" target=\"_blank\">社区发布反馈</a></p><p style=\"padding: 0px; font-family:; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\"><br/></p><p style=\"padding: 0px; font-family:; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\"><br/></p><p style=\"padding: 0px; font-family:; margin-top: 0px; margin-bottom: 0px; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);\"><a style=\"margin: 0px; padding: 0px; color: rgb(0, 176, 80); text-decoration: underline;\" href=\"https://jq.qq.com/?_wv=1027&k=4AEFdBX\" target=\"_blank\"><span style=\"color: rgb(0, 176, 80);\">点击加入</span></a><span style=\"color: rgb(0, 176, 80);\">官方交流群</span></p><p><br/></p>', 'a:2:{i:0;s:52:\"/public/uploads/images/20170801/1501558772782878.jpg\";i:1;s:52:\"/public/uploads/images/20170801/1501558772371565.jpg\";}', '', '0', '0', '1', '0', '1', '0', '', '0', '0', '1');
+INSERT INTO `itkee_article` VALUES ('2', '23', '23', '', '1', 'demo', '0', '1', '2017-08-01 16:19:50', '0', '1501575626', '', null, '', '1', '0', '0', '0', '3', '0', '', '0', '0', '0');
 
 -- ----------------------------
 -- Table structure for `itkee_auth_group`
@@ -89,6 +91,8 @@ CREATE TABLE `itkee_auth_group` (
 -- Records of itkee_auth_group
 -- ----------------------------
 INSERT INTO `itkee_auth_group` VALUES ('1', '超级管理组', '1', '5,6,7,8,9,10,11,81,12,39,40,41,42,43,82,14,13,20,21,22,23,24,92,15,25,26,27,28,29,30,83,54,57,68,69,70,71,72,85,84,55,58,59,60,61,62,56,63,64,65,66,67,77,16,17,44,45,46,47,48,18,49,50,51,52,53,19,31,32,33,34,35,36,37,86,79,80,78,1,2,3,73,74,87,88,89,90,91');
+INSERT INTO `itkee_auth_group` VALUES ('2', '管理员组', '1', '5,6,81,12,82,14,13,92,15,30,83,25,26,27,28,113,54,57,85,77,80,16,17,44,45,18,49,100,107,108,19,31,36,37,86,32,33,34,35,94,95,101,78,87,88,89,90,91,93,96,97');
+INSERT INTO `itkee_auth_group` VALUES ('3', '对外演示权限组', '1', '5,6,81,12,82,14,13,92,15,83,98,99,54,57,85,77,79,80,78,1,2,87,88');
 
 -- ----------------------------
 -- Table structure for `itkee_auth_group_access`
@@ -106,6 +110,9 @@ CREATE TABLE `itkee_auth_group_access` (
 -- Records of itkee_auth_group_access
 -- ----------------------------
 INSERT INTO `itkee_auth_group_access` VALUES ('1', '1');
+INSERT INTO `itkee_auth_group_access` VALUES ('3', '2');
+INSERT INTO `itkee_auth_group_access` VALUES ('3', '3');
+INSERT INTO `itkee_auth_group_access` VALUES ('5', '1');
 
 -- ----------------------------
 -- Table structure for `itkee_auth_rule`
@@ -123,7 +130,7 @@ CREATE TABLE `itkee_auth_rule` (
   `condition` char(100) DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `name` (`name`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8 COMMENT='规则表';
+) ENGINE=MyISAM AUTO_INCREMENT=119 DEFAULT CHARSET=utf8 COMMENT='规则表';
 
 -- ----------------------------
 -- Records of itkee_auth_rule
@@ -232,12 +239,14 @@ CREATE TABLE `itkee_category` (
   `create_time` varchar(50) NOT NULL,
   `identity_id` int(10) NOT NULL DEFAULT '0' COMMENT '角色权限',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='分类表';
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='分类表';
 
 -- ----------------------------
 -- Records of itkee_category
 -- ----------------------------
 INSERT INTO `itkee_category` VALUES ('1', '默认栏目', '', '', '', '', '', '', '1', '0', '0', '0,', '1500537763', '0');
+INSERT INTO `itkee_category` VALUES ('2', 'tewt', '', '', '', '', '', '', '1', '0', '0', '0,', '1501138866', '0');
+INSERT INTO `itkee_category` VALUES ('3', '烦烦烦', '', '', '', '', '', '', '1', '0', '2', '0,2,', '1501230161', '0');
 
 -- ----------------------------
 -- Table structure for `itkee_link`
@@ -256,8 +265,7 @@ CREATE TABLE `itkee_link` (
 -- ----------------------------
 -- Records of itkee_link
 -- ----------------------------
-INSERT INTO `itkee_link` VALUES ('1', 'ITKEE社区', 'http://www.itkee.cn', '', '1', '0');
-INSERT INTO `itkee_link` VALUES ('2', 'SuperMan博客', 'http://superman.itkee.cn', '', '1', '20');
+INSERT INTO `itkee_link` VALUES ('2', 'SuperMan博客', 'http://superman.itkee.cn', '', '0', '20');
 
 -- ----------------------------
 -- Table structure for `itkee_nav`
@@ -356,7 +364,7 @@ CREATE TABLE `itkee_system` (
 -- ----------------------------
 -- Records of itkee_system
 -- ----------------------------
-INSERT INTO `itkee_system` VALUES ('1', 'site_config', 'a:7:{s:10:\"site_title\";s:14:\"ITKEE.CN社区\";s:9:\"seo_title\";s:36:\"ITKEE社区-极速，清新，精简\";s:11:\"seo_keyword\";s:36:\"ITKEE社区-极速，清新，精简\";s:15:\"seo_description\";s:426:\"ITKEE.CN是以技术交流为中心开发的社区论坛，由几个志同道合的程序员一起维护组建的互联网技术工作室,曾为上百客户排忧解难，目前主要PHP技术交流，技术服务，前端开发，UI社区等业务为主线运营,社区及工作室主要定位于：互联网技术交流，互联网资源分享，网站开发，电商网站技术支持，整站开发，二次开发等服务\";s:14:\"site_copyright\";s:76:\"Copyright © 2016-2017 ITKEE.CN. All Rights Reserved. ITKEE.CN 版权所有\";s:8:\"site_icp\";s:0:\"\";s:11:\"site_tongji\";s:0:\"\";}');
+INSERT INTO `itkee_system` VALUES ('1', 'site_config', 'a:7:{s:10:\"site_title\";s:14:\"ITKEE.CN社区\";s:9:\"seo_title\";s:36:\"ITKEE社区-极速，清新，精简\";s:11:\"seo_keyword\";s:36:\"ITKEE社区-极速，清新，精简\";s:15:\"seo_description\";s:426:\"ITKEE.CN是以技术交流为中心开发的社区论坛，由几个志同道合的程序员一起维护组建的互联网技术工作室,曾为上百客户排忧解难，目前主要PHP技术交流，技术服务，前端开发，UI社区等业务为主线运营,社区及工作室主要定位于：互联网技术交流，互联网资源分享，网站开发，电商网站技术支持，整站开发，二次开发等服务\";s:14:\"site_copyright\";s:76:\"Copyright © 2016-2017 ITKEE.CN. All Rights Reserved. ITKEE.CN 版权所有\";s:8:\"site_icp\";s:0:\"\";s:11:\"site_tongji\";s:109:\"<script src=\"https://s19.cnzz.com/z_stat.php?id=1262986736&web_id=1262986736\" language=\"JavaScript\"></script>\";}');
 INSERT INTO `itkee_system` VALUES ('2', 'email_config', '');
 INSERT INTO `itkee_system` VALUES ('3', 'system_config', 'a:2:{s:9:\"app_debug\";s:4:\"true\";s:9:\"app_trace\";s:5:\"false\";}');
 INSERT INTO `itkee_system` VALUES ('4', 'qq_config', '');
@@ -389,9 +397,14 @@ CREATE TABLE `itkee_user` (
   `coin` int(11) NOT NULL DEFAULT '0' COMMENT '用户金币',
   PRIMARY KEY (`id`),
   KEY `username` (`username`) USING BTREE
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COMMENT='用户表';
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of itkee_user
 -- ----------------------------
-INSERT INTO `itkee_user` VALUES ('1', 'SuperMan   ❀', '8d481b131be8e0e9e1890daf2d29aa3b', '18888886666', 'superman@itkee.cn', '1', '1494481337', '1500254293', '127.0.0.1', '/uploads/20170707/baa5bf7dd838ffa9302e2357437eb015.png', '一直在做更好！站长邮箱：superman@itkee.cn ', '0', '', '男', '北京', '海淀', '', '', '', '0', '0');
+INSERT INTO `itkee_user` VALUES ('2', 'ssd', '8d481b131be8e0e9e1890daf2d29aa3b', '', '', '1', '1501295291', null, '', null, null, '0', null, '保密', null, null, null, null, null, '0', '0');
+INSERT INTO `itkee_user` VALUES ('3', 'sdsda', '8d481b131be8e0e9e1890daf2d29aa3b', '', '', '1', '1501556442', null, '', null, null, '0', null, '保密', null, null, null, null, null, '0', '0');
+INSERT INTO `itkee_user` VALUES ('4', 'demo', 'a24dfc8e919798d7f7b857775175527c', '', '', '1', '1501572469', null, '', null, null, '0', null, '保密', null, null, null, null, null, '0', '0');
+INSERT INTO `itkee_user` VALUES ('5', '234234', '36837243869b6ba3f260c625ec3fc919', '', '', '1', '1501585751', null, '', null, null, '0', null, '保密', null, null, null, null, null, '0', '0');
+INSERT INTO `itkee_user` VALUES ('6', 'qw', '1f4f8fda92a89ff9b3c1d7933ff32ff6', 'asd', 'asd', '1', '1501662847', null, '', null, null, '0', null, '保密', null, null, null, null, null, '0', '0');
+INSERT INTO `itkee_user` VALUES ('7', '234', 'd999fff35086696499b0f8f13723b929', '234', '234', '1', '1501671512', null, '', null, null, '0', null, '保密', null, null, null, null, null, '0', '0');
