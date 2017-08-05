@@ -1,5 +1,20 @@
 {extend name="layout/index_layout" /}
 <div class="layui-body">
+    <div class="layui-tab layui-tab-brief">
+        <ul class="layui-tab-title">
+            <li class="layui-this">网站概览</li>
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-show">
+                <table class="layui-table">
+                    <tr>
+                        <td style="width: 400px;">当前版本</td>
+                        <td>{$config.url}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
     <!--tab标签-->
     <div class="layui-tab layui-tab-brief">
         <ul class="layui-tab-title">

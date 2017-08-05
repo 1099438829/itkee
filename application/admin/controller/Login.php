@@ -64,6 +64,8 @@ class Login extends Controller
                     } else {
                         Session::set('admin_id', $admin_user['id']);
                         Session::set('admin_name', $admin_user['username']);
+                        $group = Db::name('auth_group_access')->where(['uid'=>$admin_user['id']])->find();
+                        Session::set('group_id', $group['group_id']);
                         Db::name('admin_user')->update(
                             [
                                 'last_login_time' => date('Y-m-d H:i:s', time()),
@@ -71,8 +73,6 @@ class Login extends Controller
                                 'id'              => $admin_user['id']
                             ]
                         );
-                        $group = Db::name('auth_group_access')->where(['uid'=>session('admin_id')])->find();
-                        Session::set('group_id', $group['group_id']);
                         $this->success('登录成功', 'admin/index/index');
                     }
                 } else {
