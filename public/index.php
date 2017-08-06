@@ -36,6 +36,6 @@ define('TMPL_THEMES','public/'.TMPL_THEMES_NAME);
 define('HOME_THEMES_NAME','itkee');
 define('HOME_THEMES',HOME_THEMES_NAME.'/');
 // 定义ITKEE 版本号
-define('ITKEE_VERSION', 'v 1.0.1');
+define('ITKEE_VERSION', '1.0.1');
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';
