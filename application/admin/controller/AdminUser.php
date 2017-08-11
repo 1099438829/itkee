@@ -1,13 +1,4 @@
 <?php
-// +----------------------------------------------------------------------
-// | ITKEE [ WE CAN DO IT JUST THINK IT ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2017 http://www.itkee.cn.cn All rights reserved.
-// +----------------------------------------------------------------------
-// | Author: SuperMan <superman@itkee.cn>
-// +----------------------------------------------------------------------
-// | 友情链接管理
-// +----------------------------------------------------------------------
 namespace app\admin\controller;
 
 use app\common\model\AdminUser as AdminUserModel;
@@ -113,15 +104,13 @@ class AdminUser extends AdminBase
                 $this->error($validate_result);
             } else {
                 $admin_user = $this->admin_user_model->find($id);
-
-                $admin_user->id       = $id;
-                $admin_user->username = $data['username'];
-                $admin_user->status   = $data['status'];
-
+                $admin_data['id']               = $admin_user['id'];
+                $admin_data['username']         = $data['username'];
+                $admin_data['status']           = $data['status'];
                 if (!empty($data['password']) && !empty($data['confirm_password'])) {
-                    $admin_user->password = md5($data['password'] . Config::get('salt'));
+                    $admin_data['password']     = md5(Config::get('salt') . $data['password']);
                 }
-                if ($admin_user->save() !== false) {
+                if ($this->admin_user_model->where(['id'=>$id])->update($admin_data) !== false) {
                     $auth_group_access['uid']      = $id;
                     $auth_group_access['group_id'] = $group_id;
                     $this->auth_group_access_model->where('uid', $id)->update($auth_group_access);
